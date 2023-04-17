@@ -2,13 +2,15 @@
 
 .Heading {
   font-family: 'Concert One', cursive;
-  opacity: 50%;
   text-transform: uppercase;
   font-size: 48px;
-  width: 330px;
+  padding: 0 2rem;
+  background-color: #ff9659;
 }
 
 .Heading > span {
+  width: 330px;
+  opacity: 50%;
   margin: 0;
   padding: 0;
   display: block;

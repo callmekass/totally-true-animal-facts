@@ -1,6 +1,5 @@
 .App {
-  width: 100%;
-  margin: 0px 2rem;
   display: flex;
   flex-direction: row;
+  min-height: 100vh;
 }
