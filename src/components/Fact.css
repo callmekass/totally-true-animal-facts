@@ -1,0 +1,14 @@
+.Fact {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.Fact p {
+  min-height: 3rem;
+  line-height: 1rem;
+  max-width: 600px;
+  padding: 0;
+  margin: 0;
+}

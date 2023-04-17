@@ -2,7 +2,7 @@ import './Heading.css';
 
 function Heading() {
   return (
-    <div id="Heading">
+    <div className="Heading">
       <span>Absolutely</span>
       <span>completely</span>
       <span>100% for sure</span>
