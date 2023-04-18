@@ -1,9 +1,8 @@
 .Fact {
   text-align: end;
+  margin: 0 auto;
   vertical-align: top;
   background-color: white;
-  margin: 0 auto;
-  margin-top: 40px;
   padding: 0 1rem;
   width: 600px;
 }

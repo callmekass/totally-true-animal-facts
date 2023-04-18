@@ -11,11 +11,17 @@ function Fact() {
     setFact(
       'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
     );
-    setFactNum(1);
+    setFactNum(100);
   }, []);
 
   return (
     <div className="Fact">
+      <a href="https://github.com/callmekass/totally-true-animal-facts">
+        View Source Code
+      </a>
+      <a href="https://github.com/callmekass/totally-true-animal-facts">
+        Donate to Animals in Need
+      </a>
       <div className="factNumber">Fact #{factNum}</div>
       <div className="animalFact">
         <p>{fact}</p>
