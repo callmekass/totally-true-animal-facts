@@ -1,7 +1,11 @@
 import './Fact.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faRotateRight,
+  faDollar,
+  faCode,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Fact() {
   const [fact, setFact] = useState<string>('');
@@ -16,12 +20,6 @@ function Fact() {
 
   return (
     <div className="Fact">
-      <a href="https://github.com/callmekass/totally-true-animal-facts">
-        View Source Code
-      </a>
-      <a href="https://github.com/callmekass/totally-true-animal-facts">
-        Donate to Animals in Need
-      </a>
       <div className="factNumber">Fact #{factNum}</div>
       <div className="animalFact">
         <p>{fact}</p>
@@ -29,6 +27,22 @@ function Fact() {
       <button type="button" className="btn" onClick={__fetchFact}>
         Get New Fact <FontAwesomeIcon icon={faRotateRight} />
       </button>
+      <div className="linkArea">
+        <button
+          type="button"
+          className="btn btn-secondary"
+          href="https://github.com/callmekass/totally-true-animal-facts"
+        >
+          View Source Code <FontAwesomeIcon icon={faCode} />
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          href="https://github.com/callmekass/totally-true-animal-facts"
+        >
+          Donate to Animals in Need <FontAwesomeIcon icon={faDollar} />
+        </button>
+      </div>
     </div>
   );
 

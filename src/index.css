@@ -42,17 +42,14 @@ button.btn {
 }
 
 button.btn-secondary {
+  color: rgba(255, 255, 255, 80%);
   border-color: var(--primary);
   background-color: var(--primary);
 }
 
 button:hover {
   cursor: pointer;
-  color: rgba(255, 255, 255, 80%);
+  color: white;
   background-color: var(--primary);
   border-color: var(--primary);
-}
-
-button:active {
-  color: #fff;
 }

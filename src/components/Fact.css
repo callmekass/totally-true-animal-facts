@@ -5,6 +5,7 @@
   background-color: white;
   padding: 0 1rem;
   width: 600px;
+  margin-top: 20px;
 }
 
 .Fact p {
@@ -26,4 +27,16 @@
   font-size: 1.2rem;
   color: var(--primary);
   box-shadow: inset 0px -6px 0px 0px var(--primary);
+}
+
+.linkArea {
+  margin-top: 40px;
+}
+
+.linkArea button {
+  display: block;
+}
+
+.linkArea button:not(:first-child) {
+  margin-top: 10px;
 }
