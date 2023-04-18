@@ -14,8 +14,8 @@
   margin: 0;
   text-align: start;
   min-height: 3rem;
-  line-height: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .animalFact {
