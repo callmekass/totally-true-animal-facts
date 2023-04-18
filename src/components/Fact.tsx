@@ -15,7 +15,7 @@ function Fact() {
       <div className="animalFact">
         <p>{fact}</p>
       </div>
-      <button type="button">
+      <button type="button" className="btn">
         Get New Fact <FontAwesomeIcon icon={faRotateRight} />
       </button>
     </div>

@@ -28,7 +28,7 @@ html {
   padding: 0;
 }
 
-button {
+button.btn {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
@@ -39,6 +39,11 @@ button {
   border-radius: 4px;
   padding: 4px 8px;
   color: rgba(0, 0, 0, 50%);
+}
+
+button.btn-secondary {
+  border-color: var(--primary);
+  background-color: var(--primary);
 }
 
 button:hover {
