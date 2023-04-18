@@ -12,10 +12,14 @@ function Fact() {
   const [factNum, setFactNum] = useState<number>(0);
 
   useEffect(() => {
+    fetch('http://www.randomnumberapi.com/api/v1.0/random')
+      .then((response) => response.json())
+      .then((data) => {
+        setFactNum(data[0]);
+      });
     setFact(
       'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
     );
-    setFactNum(100);
   }, []);
 
   return (
@@ -61,8 +65,11 @@ function Fact() {
   );
 
   function __fetchFact() {
-    setFact('Yaaaayyyyyy');
-    setFactNum(factNum + 1);
+    fetch('http://www.randomnumberapi.com/api/v1.0/random')
+      .then((response) => response.json())
+      .then((data) => {
+        setFactNum(data[0]);
+      });
   }
 }
 
