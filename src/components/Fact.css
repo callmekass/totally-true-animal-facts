@@ -22,6 +22,21 @@ p {
   min-height: 3rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .animalFact p {
+    min-height: 6rem;
+  }
+  .Fact {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .animalFact p {
+    min-height: 7rem;
+  }
+}
+
 .heading {
   text-transform: uppercase;
   line-height: 1.5;
