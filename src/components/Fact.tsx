@@ -4,10 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 
 function Fact() {
-  const [fact, setFact] = useState<string>(
-    'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
-  );
-  const [factNum, setFactNum] = useState<number>(647);
+  const [fact, setFact] = useState<string>('');
+  const [factNum, setFactNum] = useState<number>(0);
+
+  useEffect(() => {
+    setFact(
+      'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
+    );
+    setFactNum(648);
+  }, []);
 
   return (
     <div className="Fact">
