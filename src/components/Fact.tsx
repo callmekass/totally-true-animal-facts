@@ -13,12 +13,26 @@ import { onValue, ref } from 'firebase/database';
 function Fact() {
   const [fact, setFact] = useState<string>('');
   const [factNum, setFactNum] = useState<number>(0);
-  const [factCount, setFactCount] = useState<number>(0);
+  const [factCount, setFactCount] = useState<number>(200);
   const apiUrl = 'https://www.randomnumberapi.com/api/v1.0/random';
 
   useEffect(() => {
-    __fetchFactCount();
-    __fetchNewFact();
+    // TODO: pause until fetch fact count is done
+    const fetchData = async () => {
+      const query = ref(db, 'fact_count');
+
+      onValue(query, async (snapshot) => {
+        const count = await snapshot.val();
+
+        if (snapshot.exists()) {
+          setFactCount(await count);
+        }
+      });
+
+      __fetchNewFact();
+    };
+
+    fetchData().catch(console.error);
   }, []);
 
   return (
@@ -27,7 +41,17 @@ function Fact() {
 
       <div className="animalFact text-container">
         <p>{fact}</p>
-        <button type="button" className="btn" onClick={__fetchNewFact}>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            try {
+              __fetchNewFact();
+            } catch {
+              console.error;
+            }
+          }}
+        >
           Get New Fact <FontAwesomeIcon icon={faRotateRight} />
         </button>
       </div>
@@ -63,24 +87,9 @@ function Fact() {
     </div>
   );
 
-  function __fetchFactCount() {
-    const query = ref(db, 'fact_count');
-
-    return onValue(query, (snapshot) => {
-      const count = snapshot.val();
-
-      if (snapshot.exists()) {
-        setFactCount(count);
-      } else {
-        console.log('query failed');
-      }
-    });
-  }
-
   function __fetchNewFact() {
     //  Generate random int between 1 and factCount
     var randint = Math.floor(Math.random() * factCount) + 1;
-    console.log(randint);
 
     const query = ref(db, 'facts/' + randint);
 
@@ -91,14 +100,8 @@ function Fact() {
         setFactNum(randint);
         setFact(newFact);
       } else {
-        console.log('query failed');
       }
     });
-  }
-
-  function __randomNumberInRange(min: number, max: number) {
-    // 👇️ get number between min (inclusive) and max (inclusive)
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
 
