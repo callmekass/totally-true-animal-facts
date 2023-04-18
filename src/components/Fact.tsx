@@ -10,16 +10,10 @@ import {
 function Fact() {
   const [fact, setFact] = useState<string>('');
   const [factNum, setFactNum] = useState<number>(0);
+  const apiUrl = 'https://www.randomnumberapi.com/api/v1.0/random';
 
   useEffect(() => {
-    fetch('http://www.randomnumberapi.com/api/v1.0/random')
-      .then((response) => response.json())
-      .then((data) => {
-        setFactNum(data[0]);
-      });
-    setFact(
-      'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
-    );
+    __fetchFact();
   }, []);
 
   return (
@@ -65,10 +59,13 @@ function Fact() {
   );
 
   function __fetchFact() {
-    fetch('http://www.randomnumberapi.com/api/v1.0/random')
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         setFactNum(data[0]);
+        setFact(
+          'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
+        );
       });
   }
 }
