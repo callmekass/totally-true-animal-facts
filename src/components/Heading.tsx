@@ -3,12 +3,12 @@ import './Heading.css';
 function Heading() {
   return (
     <div className="Heading">
-      <span>Absolutely</span>
-      <span>completely</span>
-      <span>100% for sure</span>
-      <span>guaranteed</span>
-      <span>totally true</span>
-      <span>animal facts</span>
+      <div>Absolutely</div>
+      <div>completely</div>
+      <div>100% for sure</div>
+      <div>guaranteed</div>
+      <div>totally true</div>
+      <div>animal facts</div>
     </div>
   );
 }
