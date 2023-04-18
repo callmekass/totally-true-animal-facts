@@ -11,7 +11,7 @@ function Fact() {
     setFact(
       'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
     );
-    setFactNum(648);
+    setFactNum(1);
   }, []);
 
   return (
@@ -20,11 +20,16 @@ function Fact() {
       <div className="animalFact">
         <p>{fact}</p>
       </div>
-      <button type="button" className="btn">
+      <button type="button" className="btn" onClick={__fetchFact}>
         Get New Fact <FontAwesomeIcon icon={faRotateRight} />
       </button>
     </div>
   );
+
+  function __fetchFact() {
+    setFact('Yaaaayyyyyy');
+    setFactNum(factNum + 1);
+  }
 }
 
 export default Fact;
