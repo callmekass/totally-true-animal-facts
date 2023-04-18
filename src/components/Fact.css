@@ -8,7 +8,7 @@
   margin-top: 20px;
 }
 
-.Fact p {
+.animalFact p {
   padding: 0;
   margin: 0;
   text-align: start;
@@ -30,13 +30,16 @@
 }
 
 .linkArea {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
-.linkArea button {
-  display: block;
+.linkArea p {
+  color: #a9a9a9;
+  padding: 0;
+  margin: 0 0 2px 0;
+  text-align: start;
 }
 
-.linkArea button:not(:first-child) {
-  margin-top: 10px;
+.linkArea p:not(:first-child) {
+  margin-top: 30px;
 }

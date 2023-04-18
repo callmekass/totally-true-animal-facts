@@ -28,7 +28,7 @@ html {
   padding: 0;
 }
 
-button.btn {
+.btn {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
@@ -39,15 +39,21 @@ button.btn {
   border-radius: 4px;
   padding: 4px 8px;
   color: #7a7a7a;
+  line-height: normal;
+  text-transform: none;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-button.btn-secondary {
+.btn-secondary {
   color: rgba(255, 255, 255, 80%);
   border-color: var(--primary);
   background-color: var(--primary);
 }
 
-button:hover {
+.btn:hover {
   cursor: pointer;
   color: white;
   background-color: var(--primary);
