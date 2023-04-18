@@ -13,7 +13,7 @@
   padding: 0;
   margin: 0;
   text-align: start;
-  min-height: 5rem;
+  min-height: 4rem;
   padding: 0rem 1rem;
   margin-bottom: 0.5rem;
 }
@@ -24,6 +24,7 @@
 
 .factNumber {
   text-transform: uppercase;
+  line-height: 1.5;
   font-size: 1.2rem;
   color: var(--primary);
   box-shadow: inset 0px -6px 0px 0px var(--primary);
