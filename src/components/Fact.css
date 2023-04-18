@@ -4,7 +4,7 @@
   vertical-align: top;
   background-color: white;
   padding: 0 1rem;
-  width: 800px;
+  max-width: 800px;
   margin-top: 20px;
 }
 
