@@ -13,25 +13,15 @@ import { onValue, ref } from 'firebase/database';
 function Fact() {
   const [fact, setFact] = useState<string>('');
   const [factNum, setFactNum] = useState<number>(0);
-  const [factCount, setFactCount] = useState<number>(200);
-  const apiUrl = 'https://www.randomnumberapi.com/api/v1.0/random';
+
+  /*  Could make the app fetch this value from the database  
+      But I have no intention to ever add more facts*/
+  const [factCount, setFactCount] = useState<number>(205);
 
   useEffect(() => {
-    // TODO: pause until fetch fact count is done
     const fetchData = async () => {
-      const query = ref(db, 'fact_count');
-
-      onValue(query, async (snapshot) => {
-        const count = await snapshot.val();
-
-        if (snapshot.exists()) {
-          setFactCount(await count);
-        }
-      });
-
       __fetchNewFact();
     };
-
     fetchData().catch(console.error);
   }, []);
 
