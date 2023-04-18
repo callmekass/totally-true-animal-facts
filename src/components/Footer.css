@@ -1,8 +1,11 @@
-.Footer {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000000;
+.Footer * {
   font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+  text-align: center;
+}
+.Footer {
   margin-top: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 100%;
+  padding: 20px 0;
 }
