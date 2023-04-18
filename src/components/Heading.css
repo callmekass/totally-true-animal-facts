@@ -4,11 +4,19 @@
   font-size: 48px;
   padding: 0 2rem;
   vertical-align: bottom;
+  min-width: 330px;
   background-color: var(--primary);
 }
 
+@media only screen and (max-width: 900px) {
+  .Heading {
+    padding: 0 1rem;
+    line-height: 1.3;
+    padding-bottom: 30px;
+  }
+}
+
 .Heading > div {
-  width: 330px;
   color: #000;
   opacity: 50%;
   margin: 0;
