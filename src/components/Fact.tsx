@@ -7,13 +7,18 @@ import {
   faCode,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { db } from '../utils/firebase';
+import { onValue, ref } from 'firebase/database';
+
 function Fact() {
   const [fact, setFact] = useState<string>('');
   const [factNum, setFactNum] = useState<number>(0);
+  const [factCount, setFactCount] = useState<number>(0);
   const apiUrl = 'https://www.randomnumberapi.com/api/v1.0/random';
 
   useEffect(() => {
-    __fetchFact();
+    __fetchFactCount();
+    __fetchNewFact();
   }, []);
 
   return (
@@ -22,7 +27,7 @@ function Fact() {
 
       <div className="animalFact text-container">
         <p>{fact}</p>
-        <button type="button" className="btn" onClick={__fetchFact}>
+        <button type="button" className="btn" onClick={__fetchNewFact}>
           Get New Fact <FontAwesomeIcon icon={faRotateRight} />
         </button>
       </div>
@@ -58,15 +63,42 @@ function Fact() {
     </div>
   );
 
-  function __fetchFact() {
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        setFactNum(data[0]);
-        setFact(
-          'The war between white and brown chickens can be dated back to the great cock fight of 1432.'
-        );
-      });
+  function __fetchFactCount() {
+    const query = ref(db, 'fact_count');
+
+    return onValue(query, (snapshot) => {
+      const count = snapshot.val();
+
+      if (snapshot.exists()) {
+        setFactCount(count);
+      } else {
+        console.log('query failed');
+      }
+    });
+  }
+
+  function __fetchNewFact() {
+    //  Generate random int between 1 and factCount
+    var randint = Math.floor(Math.random() * factCount) + 1;
+    console.log(randint);
+
+    const query = ref(db, 'facts/' + randint);
+
+    return onValue(query, (snapshot) => {
+      const newFact = snapshot.val();
+
+      if (snapshot.exists()) {
+        setFactNum(randint);
+        setFact(newFact);
+      } else {
+        console.log('query failed');
+      }
+    });
+  }
+
+  function __randomNumberInRange(min: number, max: number) {
+    // 👇️ get number between min (inclusive) and max (inclusive)
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
 
