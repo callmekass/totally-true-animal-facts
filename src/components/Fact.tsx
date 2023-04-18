@@ -13,7 +13,7 @@ function Fact() {
       <div className="animalFact">
         <p>{fact}</p>
       </div>
-      <button type="button">Get New Fact</button>
+      <button type="button">New Fact</button>
     </div>
   );
 }
