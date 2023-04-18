@@ -17,9 +17,37 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  font-family: 'Concert One', cursive;
+}
+
 body,
 html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 0.25s ease;
+  background-color: white;
+  border: none;
+  border: 2px solid rgba(0, 0, 0, 50%);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: rgba(0, 0, 0, 50%);
+}
+
+button:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 80%);
+  background-color: var(--primary);
+  border-color: transparent;
+}
+
+button:active {
+  color: white;
 }

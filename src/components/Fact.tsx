@@ -1,5 +1,7 @@
 import './Fact.css';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 
 function Fact() {
   const [fact, setFact] = useState<string>(
@@ -13,7 +15,9 @@ function Fact() {
       <div className="animalFact">
         <p>{fact}</p>
       </div>
-      <button type="button">New Fact</button>
+      <button type="button">
+        Get New Fact <FontAwesomeIcon icon={faRotateRight} />
+      </button>
     </div>
   );
 }
